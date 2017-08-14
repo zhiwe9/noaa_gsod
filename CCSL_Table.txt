@@ -1,0 +1,38 @@
+							CCSL.TXT
+
+The Comprehensive Cooperative Station List contains a single, minimal entry for each Coop station ID
+in the Cooperative Station History database. Some of the older Coop stations may not have Coop ID 
+numbers assigned.
+
+The information included for each station includes identifiers and location information.
+
+The file is sorted by State, Station Name, End Date, and Coop Station ID.
+
+Stations with no noted state are at the end of the list.
+
+
+FIELD                  LENGTH    FORMAT        POSITION        DESCRIPTION
+-------------------------------------------------------------------------------------------------------------------------------------
+STATEPROV              2         XX            001-002         USPS two character alphabetic abbreviation for each state, uppercase,
+							       or province.
+
+STATION NAME           30        X(30)         004-033         Uppercase name of station, may contain characters, numbers or symbols.
+
+COOP STATION ID        6         999999        035-040         Assigned by NCEI, first 2 digits represent state,
+                                                               last 4 digits are assigned numerically by alphabetical
+                                                               ordering of the station name.
+
+CLIMATE DIVISION       2         99            042-043         Usually 01 - 10, unknown will be NULL.
+
+COUNTY NAME            30        X(30)         045-074         Name of county, uppercase.
+
+NCDC STATION ID        8         99999999      076-083         Unique identifier used by NCEI.
+
+LATITUDE               10        x99*99'99"    085-094         Latitude in degrees, minutes, seconds, where "x" is blank or "-".
+
+LONGITUDE              11        x999*99'99"   096-106         Longitude in degrees, minutes, seconds, where "x" is blank or "-".
+
+ELEVATION              6         999999        108-113         Station elevation, in feet.
+
+END DATE               8         YYYYMMDD      115-122         Last date for the station, set to 99991231 if station is active.
+-------------------------------------------------------------------------------------------------------------------------------------
